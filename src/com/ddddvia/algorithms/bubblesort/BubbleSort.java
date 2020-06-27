@@ -23,7 +23,7 @@ public class BubbleSort {
      *
      * @param arr 数组
      */
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
             findMax(arr, i);
         }
