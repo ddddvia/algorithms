@@ -1,5 +1,7 @@
 package com.ddddvia.algorithms.selectionsort;
 
+import static com.ddddvia.algorithms.utils.ToolUtils.swap;
+
 /**
  * 选择排序：时间复杂度O(n^2)
  * @Author: hedwf
@@ -27,24 +29,11 @@ public class SelectionSort {
     }
 
     /**
-     * 交换值
-     *
-     * @param arr    数组
-     * @param source 源值
-     * @param target 目标最小值
-     */
-    static void swap(int[] arr, int source, int target) {
-        int temp = arr[source];
-        arr[source] = arr[target];
-        arr[target] = temp;
-    }
-
-    /**
      * 输出函数
      *
      * @param arr 入参
      */
-    static void print(int[] arr) {
+    private static void print(int[] arr) {
         for (int attr : arr) {
             System.out.print(attr + ",");
         }
