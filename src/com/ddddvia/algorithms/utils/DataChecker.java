@@ -1,6 +1,8 @@
 package com.ddddvia.algorithms.utils;
 
 import com.ddddvia.algorithms.bubblesort.BubbleSort;
+import com.ddddvia.algorithms.insertionsort.InsertionSort;
+import com.ddddvia.algorithms.mergesort.MergeSort;
 import com.ddddvia.algorithms.selectionsort.SelectionSort;
 
 import java.util.Arrays;
@@ -61,6 +63,10 @@ public class DataChecker {
                 SelectionSort.sort(arrCopy);
             case 2:
                 BubbleSort.sort(arrCopy);
+            case 3:
+                InsertionSort.sort(arrCopy);
+            case 4:
+                MergeSort.sort(arrCopy,0,arrCopy.length-1);
             default:
                 Arrays.sort(arrCopy);
         }
