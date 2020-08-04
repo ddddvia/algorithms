@@ -3,6 +3,7 @@ package com.ddddvia.algorithms.utils;
 import com.ddddvia.algorithms.bubblesort.BubbleSort;
 import com.ddddvia.algorithms.insertionsort.InsertionSort;
 import com.ddddvia.algorithms.mergesort.MergeSort;
+import com.ddddvia.algorithms.quicksort.QuickSort;
 import com.ddddvia.algorithms.selectionsort.SelectionSort;
 
 import java.util.Arrays;
@@ -19,6 +20,11 @@ public class DataChecker {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("【1】选择排序");
+        System.out.println("【2】冒泡排序");
+        System.out.println("【3】插入排序");
+        System.out.println("【4】归并排序");
+        System.out.println("【5】快速排序");
         System.out.print("请输入您的算法序号：");
         algorithmNum = scanner.nextInt();
         long startTime = System.currentTimeMillis();
@@ -58,6 +64,7 @@ public class DataChecker {
         //复制数组
         System.arraycopy(arr, 0, arrCopy, 0, arr.length);
         Arrays.sort(arr);
+
         switch (algorithmNum){
             case 1:
                 SelectionSort.sort(arrCopy);
@@ -67,6 +74,8 @@ public class DataChecker {
                 InsertionSort.sort(arrCopy);
             case 4:
                 MergeSort.sort(arrCopy,0,arrCopy.length-1);
+            case 5:
+                QuickSort.sort(arrCopy,0,arrCopy.length-1);
             default:
                 Arrays.sort(arrCopy);
         }
