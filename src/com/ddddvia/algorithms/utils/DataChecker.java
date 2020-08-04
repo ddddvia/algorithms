@@ -16,7 +16,6 @@ import java.util.Scanner;
 public class DataChecker {
 
 
-    private static int algorithmNum;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,19 +24,27 @@ public class DataChecker {
         System.out.println("【3】插入排序");
         System.out.println("【4】归并排序");
         System.out.println("【5】快速排序");
+        System.out.println("【0】退出");
+        System.out.println();
         System.out.print("请输入您的算法序号：");
-        algorithmNum = scanner.nextInt();
-        long startTime = System.currentTimeMillis();
-        for(int i=0;i<100;i++) {
-            boolean same = check();
-            if(!same) {
-                System.out.println("wrong");
-                return;
+        int algorithmNum = scanner.nextInt();
+        while (algorithmNum!=0) {
+            long startTime = System.currentTimeMillis();
+            for (int i = 0; i < 100; i++) {
+                boolean same = check(algorithmNum);
+                if (!same) {
+                    System.out.println("wrong");
+                    return;
+                }
             }
+            System.out.println("right");
+            long endTime = System.currentTimeMillis();
+            System.out.println("程序运行时间：" + (endTime - startTime) / 1000.0 + "s");
+            System.out.println();
+            System.out.print("请输入您的算法序号：");
+            algorithmNum = scanner.nextInt();
         }
-        System.out.println("right");
-        long endTime = System.currentTimeMillis();
-        System.out.println("程序运行时间："+(endTime-startTime)/1000.0 +"s");
+        System.out.println("退出");
     }
 
     /**
@@ -57,7 +64,7 @@ public class DataChecker {
     /**
      * 比较算法正确性
      */
-    private static boolean check() {
+    private static boolean check(int algorithmNum) {
         int[] arr = generateRandomArray();
         int[] arrCopy = new int[arr.length];
 

@@ -35,13 +35,13 @@ public class QuickSort {
     public static int parition(int[] arr, int left, int right) {
         int i = left;
         int j = right - 1;
-        while (i < j) {
+        while (i <= j) {
             while (i <= j && arr[i] <= arr[right]) i++;
             while (i <= j && arr[j] > arr[right]) j--;
             if (i < j) swap(arr, i, j);
 
         }
-        if (arr[i] > arr[right]) swap(arr, i, right);
+        swap(arr, i, right);
         return i;
     }
 }
